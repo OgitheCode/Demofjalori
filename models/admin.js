@@ -1,15 +1,15 @@
 const Sequelize = require('sequelize')
 const sequelize = require('./../config/db')
 
-const User = sequelize.define(
-'user',
+const Admin = sequelize.define(
+'admin',
   {
     id: {
       type: Sequelize.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },  
-      nickname: {
+      admin_nickname: {
       type: Sequelize.STRING(120),
       unique: true,
       allowNull: false,
@@ -25,7 +25,7 @@ const User = sequelize.define(
     },
     status: {
       type: Sequelize.STRING(20),
-      defaultValue: "User",
+      defaultValue: "Admin",
       allowNull: false,
     },
 },
@@ -33,4 +33,4 @@ const User = sequelize.define(
     timestamps: false,
   })
 
-module.exports = User
+module.exports = Admin
