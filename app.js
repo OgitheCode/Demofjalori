@@ -12,7 +12,7 @@ app.use('/public', express.static('public'));
 app.use(express.static('public'));
 
 //ngarko modelet
-const PerdoruesiModel = require('./models/perdoruesi')
+const UserModel = require('./models/users')
 
 require('dotenv').config();
 

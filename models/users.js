@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize')
 const sequelize = require('./../config/db')
 
-const Perdoruesi = sequelize.define(
-'perdoruesi',
+const User = sequelize.define(
+'user',
   {
-      nofka: {
+      nickname: {
       type: Sequelize.STRING(120),
       unique: true,
       allowNull: false,
@@ -14,11 +14,11 @@ const Perdoruesi = sequelize.define(
       unique: true,
       allowNull: false,
     },
-    fjalekalimi: {
+    password: {
       type: Sequelize.STRING(30),
       allowNull: false,
     },
-    statusi: {
+    status: {
       type: Sequelize.STRING(20),
       defaultValue: "perdorues",
       allowNull: false,
@@ -28,4 +28,4 @@ const Perdoruesi = sequelize.define(
     timestamps: false,
   })
 
-module.exports = Perdoruesi
+module.exports = User
