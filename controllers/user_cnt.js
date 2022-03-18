@@ -75,9 +75,6 @@ const updateUser = (req, res, next) => {
         name: req.body.name,
         email: req.body.email,
         mobile: req.body.mobile,
-        gender: req.body.gender,
-        address: req.body.address,
-        status: req.body.status,
       },
       {
         where: {
