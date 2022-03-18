@@ -15,6 +15,7 @@ app.use(express.static('public'));
 const UserModel = require('./models/users')
 const AdminModel = require('./models/admin')
 const ModeratorModel = require('./models/moderator')
+const SlangModel = require('./models/slang')
 
 require('dotenv').config();
 
