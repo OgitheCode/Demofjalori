@@ -19,9 +19,9 @@ const addUser = (req, res, next) => {
       } else {
         userModel
           .create({
-            name: req.body.name,
+            nickname: req.body.nickname,
             email: req.body.email,
-            password: req.body.mobile,
+            password: req.body.password,
           })
           .then((newUser) => {
             if (newUser) {
@@ -34,7 +34,7 @@ const addUser = (req, res, next) => {
               // not registered
               res.status(400).json({
                 status: 0,
-                msg: `Nuk u krijua llogaria! Provo me vone!`,
+                msg: `Nuk`,
               });
             }
           })
