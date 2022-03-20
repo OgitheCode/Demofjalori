@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 const slangModel = require('./../models/slang.js');
 
-const addadmin = (req, res, next) => {
+const addSlang = (req, res, next) => {
   slangModel
     .findOne({
       where: {
@@ -22,7 +22,7 @@ const addadmin = (req, res, next) => {
             word : req.body.word,
             meaning : req.body.meaning,
             example : req.body.example,
-            key_word : req.body.key_word
+            key_word : req.body.key_word,
           })
           .then((newSlang) => {
             if (newSlang) {
@@ -60,7 +60,7 @@ const allSlangs = async (req, res, next) => {
     res.send(slang);
   };
   
-  const slangModel = async (req, res, next) => {
+  const editSlang = async (req, res, next) => {
     const slang_data = slangModel.findOne({
       where: {
         id: req.params.id,
@@ -69,7 +69,7 @@ const allSlangs = async (req, res, next) => {
     res.send(slang_data);
   };
   
-  const update_slang = (req, res, next) => {
+  const updateSlang = (req, res, next) => {
     slangModel
       .update(
         {
@@ -89,13 +89,13 @@ const allSlangs = async (req, res, next) => {
           // we updated successfully
           res.status(200).json({
             status: 1,
-            msg: `Slang updated`,
+            msg: `Zhargoni u perditesua!`,
           });
         } else {
           // failed to update
           res.status(400).json({
             status: 0,
-            msg: 'Failed to update slang',
+            msg: 'Perditesimi i zhargonit deshtoi.',
           });
         }
       })
@@ -116,9 +116,9 @@ const allSlangs = async (req, res, next) => {
       })
       .then((status) => {
         if (status) {
-          res.send('Slang deleted successfully');
+          res.send('Zhargoni eshte fshire me sukses!');
         } else {
-          res.send('Slang to delete moderator');
+          res.send('Fshirja e zhargonit deshtoi.');
         }
       })
       .catch((err) => {
@@ -129,3 +129,4 @@ const allSlangs = async (req, res, next) => {
       });
   };
   
+  module.exports = {addSlang, allSlangs, editSlang, updateSlang, deleteSlang}
