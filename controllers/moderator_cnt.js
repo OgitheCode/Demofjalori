@@ -6,6 +6,7 @@ const addModerator = (req, res, next) => {
   moderatorModel
     .findOne({
       where: {
+        mod_nickname: req.body.mod_nickname,
         email: req.body.email,
       },
     })
@@ -14,21 +15,21 @@ const addModerator = (req, res, next) => {
         // we have a moderator with that email
         res.status(400).json({
           status: 0,
-          msg: `Emaili eksizton.`,
+          msg: `Moderatori eksizton.`,
         });
       } else {
         moderatorModel
           .create({
-            nickname: req.body.nickname,
+            mod_nickname: req.body.nickname,
             email: req.body.email,
             password: req.body.password,
           })
-          .then((newmoderator) => {
-            if (newmoderator) {
+          .then((newModerator) => {
+            if (newModerator) {
               //registered
               res.status(200).json({
                 status: 1,
-                data: newmoderator,
+                data: newModerator,
               });
             } else {
               // not registered
@@ -72,9 +73,9 @@ const updateModerator = (req, res, next) => {
   moderatorModel
     .update(
       {
-        name: req.body.name,
+        mod_nickname: req.body.mod_nickname,
         email: req.body.email,
-        mobile: req.body.mobile,
+        password: req.body.password,
       },
       {
         where: {
@@ -87,13 +88,13 @@ const updateModerator = (req, res, next) => {
         // we updated successfully
         res.status(200).json({
           status: 1,
-          msg: `moderator updated`,
+          msg: `Moderatori u perditesua!`,
         });
       } else {
         // failed to update
         res.status(400).json({
           status: 0,
-          msg: 'Failed to update moderator',
+          msg: 'Perditesimi i moderatorit deshtoi.',
         });
       }
     })
@@ -114,9 +115,9 @@ const deleteModerator = (req, res, next) => {
     })
     .then((status) => {
       if (status) {
-        res.send('moderator deleted successfully');
+        res.send('Moderatori u fshi me sukses!');
       } else {
-        res.send('Failed to delete moderator');
+        res.send('Fshirja e moderatorit deshtoi.');
       }
     })
     .catch((err) => {

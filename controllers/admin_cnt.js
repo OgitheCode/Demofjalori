@@ -6,6 +6,7 @@ const addadmin = (req, res, next) => {
   adminModel
     .findOne({
       where: {
+        admin_nickname: req.body.admin_nickname,
         email: req.body.email,
       },
     })
@@ -14,12 +15,12 @@ const addadmin = (req, res, next) => {
         // we have a admin with that email
         res.status(400).json({
           status: 0,
-          msg: `Emaili eksizton.`,
+          msg: `Admini ekziston`,
         });
       } else {
         adminModel
           .create({
-            nickname: req.body.nickname,
+            admin_nickname: req.body.nickname,
             email: req.body.email,
             password: req.body.password,
           })
@@ -72,9 +73,9 @@ const updateadmin = (req, res, next) => {
   adminModel
     .update(
       {
-        name: req.body.name,
+        admin_nickname: req.body.admin_nickname,
         email: req.body.email,
-        mobile: req.body.mobile,
+        password: req.body.password,
       },
       {
         where: {
@@ -87,13 +88,13 @@ const updateadmin = (req, res, next) => {
         // we updated successfully
         res.status(200).json({
           status: 1,
-          msg: `admin updated`,
+          msg: `Admini u perditesua!`,
         });
       } else {
         // failed to update
         res.status(400).json({
           status: 0,
-          msg: 'Failed to update admin',
+          msg: 'Perditesimi i adminit deshtoi.',
         });
       }
     })
@@ -114,9 +115,9 @@ const deleteadmin = (req, res, next) => {
     })
     .then((status) => {
       if (status) {
-        res.send('admin deleted successfully');
+        res.send('Admini u fshi me sukses');
       } else {
-        res.send('Failed to delete admin');
+        res.send('Fshirja e adminit deshtoi');
       }
     })
     .catch((err) => {
@@ -127,4 +128,4 @@ const deleteadmin = (req, res, next) => {
     });
 };
 
-module.exports = { addadmin, alladmins, editadmin, updateadmin, deleteadmin };
+module.exports = { addadmin, allAdmins, editadmin, updateadmin, deleteadmin };

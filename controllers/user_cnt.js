@@ -6,6 +6,7 @@ const addUser = (req, res, next) => {
   userModel
     .findOne({
       where: {
+        nickname: req.body.nickname,
         email: req.body.email,
       },
     })
@@ -14,7 +15,7 @@ const addUser = (req, res, next) => {
         // we have a user with that email
         res.status(400).json({
           status: 0,
-          msg: `Emaili eksizton.`,
+          msg: `Perdoruesi eksizton.`,
         });
       } else {
         userModel
@@ -34,7 +35,7 @@ const addUser = (req, res, next) => {
               // not registered
               res.status(400).json({
                 status: 0,
-                msg: `Nuk`,
+                msg: `Nuk u regjistrua`,
               });
             }
           })
@@ -72,9 +73,9 @@ const updateUser = (req, res, next) => {
   userModel
     .update(
       {
-        name: req.body.name,
+        nickname: req.body.name,
         email: req.body.email,
-        mobile: req.body.mobile,
+        password: req.body.password,
       },
       {
         where: {
@@ -87,13 +88,13 @@ const updateUser = (req, res, next) => {
         // we updated successfully
         res.status(200).json({
           status: 1,
-          msg: `User updated`,
+          msg: `Perdoruesi u perditesua!`,
         });
       } else {
         // failed to update
         res.status(400).json({
           status: 0,
-          msg: 'Failed to update user',
+          msg: 'Perditesimi i perdoruesit deshtoi.',
         });
       }
     })
@@ -114,9 +115,9 @@ const deleteUser = (req, res, next) => {
     })
     .then((status) => {
       if (status) {
-        res.send('User deleted successfully');
+        res.send('Perdoruesi u fshi me sukses!');
       } else {
-        res.send('Failed to delete user');
+        res.send('Fshirja e perdoruesit deshtoi.');
       }
     })
     .catch((err) => {
