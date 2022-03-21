@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 const adminModel = require('./../models/admin.js');
 
-const addadmin = (req, res, next) => {
+const addAdmin = (req, res, next) => {
   adminModel
     .findOne({
       where: {
@@ -60,7 +60,7 @@ const allAdmins = async (req, res, next) => {
   res.send(admins);
 };
 
-const editadmin = async (req, res, next) => {
+const editAdmin = async (req, res, next) => {
   const admin_data = adminModel.findOne({
     where: {
       id: req.params.id,
@@ -69,7 +69,7 @@ const editadmin = async (req, res, next) => {
   res.send(admin_data);
 };
 
-const updateadmin = (req, res, next) => {
+const updateAdmin = (req, res, next) => {
   adminModel
     .update(
       {
@@ -106,7 +106,7 @@ const updateadmin = (req, res, next) => {
     });
 };
 
-const deleteadmin = (req, res, next) => {
+const deleteAdmin = (req, res, next) => {
   adminModel
     .destroy({
       where: {
@@ -128,4 +128,4 @@ const deleteadmin = (req, res, next) => {
     });
 };
 
-module.exports = { addadmin, allAdmins, editadmin, updateadmin, deleteadmin };
+module.exports = { addAdmin, allAdmins, editAdmin, updateAdmin, deleteAdmin };

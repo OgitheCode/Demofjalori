@@ -17,6 +17,11 @@ const AdminModel = require('./models/admin')
 const ModeratorModel = require('./models/moderator')
 const SlangModel = require('./models/slang')
 
+const UserRoute = require('./routes/user_route')
+const AdminRoute = require('./routes/admin_route')
+const ModeratorRoute = require('./routes/moderator_route')
+const SlangRoute = require('./routes/slang_route')
+
 require('dotenv').config();
 
 sequelize.sync();
