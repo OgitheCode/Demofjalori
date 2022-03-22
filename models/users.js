@@ -25,9 +25,14 @@ const User = sequelize.define(
     },
     status: {
       type: Sequelize.STRING(20),
-      defaultValue: "User",
-      allowNull: false,
+      defaultValue: "Active",
+   
     },
+
+    role: {
+      type:Sequelize.ENUM('user', 'moderator'),
+      defaultValue: 'user',
+    }
 },
   {
     timestamps: false,
