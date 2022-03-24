@@ -22,6 +22,10 @@ const AdminRoute = require('./routes/admin_route')
 // const ModeratorRoute = require('./routes/moderator_route')
 const SlangRoute = require('./routes/slang_route')
 
+app.use('/user/', UserRoute);
+app.use('/admin/', AdminRoute)
+app.use('/slang/', SlangRoute)
+
 
 require('dotenv').config();
 

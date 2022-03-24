@@ -19,6 +19,7 @@ const addSlang = (req, res, next) => {
       } else {
         slangModel
           .create({
+            userId : req.body.userId,
             word : req.body.word,
             meaning : req.body.meaning,
             example : req.body.example,

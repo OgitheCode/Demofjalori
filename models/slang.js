@@ -8,7 +8,7 @@ const Slang = sequelize.define(
         id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
-            primaryKey: true
+            primaryKey: true,
           },
           word: {
           type: Sequelize.STRING(30),
