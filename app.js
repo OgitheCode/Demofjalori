@@ -22,6 +22,7 @@ const AdminRoute = require('./routes/admin_route')
 // const ModeratorRoute = require('./routes/moderator_route')
 const SlangRoute = require('./routes/slang_route')
 
+
 require('dotenv').config();
 
 sequelize.sync();
@@ -33,4 +34,3 @@ const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server running in port ${PORT}`);
 });
-  
