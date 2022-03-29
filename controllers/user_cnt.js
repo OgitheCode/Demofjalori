@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const bcrypt = require('bcrypt')
 
 const userModel = require('./../models/users.js');
 
@@ -22,7 +23,7 @@ const addUser = (req, res, next) => {
           .create({
             nickname: req.body.nickname,
             email: req.body.email,
-            password: req.body.password,
+            password: bcrypt.hashSync(req.body.password,6),
           })
           .then((newUser) => {
             if (newUser) {
@@ -75,7 +76,7 @@ const updateUser = (req, res, next) => {
       {
         nickname: req.body.name,
         email: req.body.email,
-        password: req.body.password,
+        password: bcrypt.hashSync(req.body.password,6),
       },
       {
         where: {
