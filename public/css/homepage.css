@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manjari&display=swap");
+ 
+.nav {
+  position: absolute;
+  width: 1530px;
+  height: 83px;
+  left: 0px;
+  top: 0px;
+  background: #f4eced;
+  box-sizing: border-box;
+}
+ 
+.demofjalori {
+  position: absolute;
+  width: 316px;
+  height: 68px;
+  left: 49px;
+  top: 11px;
+  font-family: "Manjari";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+ 
+.box1 {
+  position: absolute;
+  width: 439px;
+  height: 477px;
+  left: 83px;
+  top: 158px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.18);
+  border-radius: 20px;
+}
+ 
+.searchBar {
+  position: absolute;
+  width: 700px;
+  height: 60px;
+  left: 634px;
+  top: 149px;
+  border: none;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.18);
+  background: #f4eced;
+  border-radius: 100px;
+  padding: 30px;
+  padding-top: 25px;
+}
+ 
+.btn {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 1370px;
+  top: 149px;
+  background: #f84251;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 200px;
+  padding-left: 10px;
+}
+ 
+input[type="submit"]:hover {
+  background-color: #e63b4a;
+}
+ 
+.box2 {
+  position: absolute;
+  width: 796px;
+  height: 335px;
+  left: 634px;
+  top: 300px;
+ 
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.18);
+  border-radius: 20px;
+}
+ 
+.box3 {
+  position: absolute;
+  width: 439px;
+  height: 235px;
+  left: 83px;
+  top: 710px;
+ 
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.18);
+  border-radius: 20px;
+}
+ 
+#p1 {
+  position: absolute;
+  width: 273px;
+  height: 55px;
+  left: 40px;
+  top: 20px;
+ 
+  font-family: "Staatliches";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 37px;
+ 
+  color: #000000;
+}
+ 
+#p2 {
+  position: absolute;
+  width: 544px;
+  height: 297px;
+  left: 40px;
+  top: 80px;
+ 
+  font-family: "Manjari";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+}
+ 
+.p3 {
+  position: absolute;
+  width: 380px;
+  height: 40px;
+  left: 35px;
+  top: 20px;
+  font-family: "Staatliches";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  color: #000000;
+}
+ 
+.p4 {
+  position: absolute;
+  width: 370px;
+  height: 194px;
+  left: 35px;
+  top: 70px;
+ 
+  font-family: "Manjari";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000000;
+}
+ 
+.p5 {
+  position: absolute;
+  width: 362px;
+  height: 464px;
+  left: 35px;
+  top: 25px;
+ 
+  font-family: "Manjari";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 29px;
+ 
+  color: #000000;
+}
+ 
+.signIn {
+  position: absolute;
+  width: 194px;
+  height: 34px;
+  left: 1320px;
+  top: 26px;
+ 
+  font-family: "Staatliches";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+ 
+  color: #000000;
+}
+.signUp {
+  position: absolute;
+  width: 194px;
+  height: 34px;
+  left: 1400px;
+  top: 26px;
+ 
+  font-family: "Staatliches";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+ 
+  color: #000000;
+}
+ 
+.footer {
+  position: absolute;
+  width: 1530px;
+  height: 150px;
+  left: 0px;
+  top: 1200px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
+}
+ 
+.pFooter {
+  position: absolute;
+  width: 228px;
+  height: 99px;
+  left: 97px;
+  top: 40px;
+ 
+  font-family: "Manjari";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 33px;
+ 
+  color: #000000;
+}
