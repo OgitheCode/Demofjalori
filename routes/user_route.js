@@ -8,6 +8,7 @@ router.route('/').get(allUsers).post(addUser)
 
 router.route('/edit/:id').get(editUser).post(updateUser);
 
-router.route('/delete/:id').get(deleteUser)
+router.route('/delete/').get(deleteUser)
+
 
 module.exports = router

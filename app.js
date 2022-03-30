@@ -11,6 +11,8 @@ app.use('/public', express.static('public'));
 
 app.use(express.static('public'));
 
+app.set('view engine', 'ejs');
+
 //ngarko modelet
 const UserModel = require('./models/users')
 const AdminModel = require('./models/admin')
