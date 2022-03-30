@@ -21,10 +21,12 @@ const UserRoute = require('./routes/user_route')
 const AdminRoute = require('./routes/admin_route')
 // const ModeratorRoute = require('./routes/moderator_route')
 const SlangRoute = require('./routes/slang_route')
+const loginRoute = require('./routes/login_route')
 
 app.use('/user/', UserRoute);
 app.use('/admin/', AdminRoute)
 app.use('/slang/', SlangRoute)
+app.use("/auth/", loginRoute)
 
 
 require('dotenv').config();

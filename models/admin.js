@@ -28,10 +28,6 @@ const Admin = sequelize.define(
       defaultValue: "Active",
       allowNull: false,
     },
-    role: {
-      type: Sequelize.STRING(20),
-      defaultValue: 'user',
-    }
 },
   {
     timestamps: false,

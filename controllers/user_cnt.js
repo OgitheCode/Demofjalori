@@ -64,7 +64,7 @@ const allUsers = async (req, res, next) => {
 const editUser = async (req, res, next) => {
   const user_data = userModel.findOne({
     where: {
-      id: req.params.id,
+      user_id: req.params.id,
     },
   });
   res.send(user_data);
@@ -80,7 +80,7 @@ const updateUser = (req, res, next) => {
       },
       {
         where: {
-          id: req.params.id,
+          user_id: req.params.id,
         },
       }
     )
@@ -111,7 +111,7 @@ const deleteUser = (req, res, next) => {
   userModel
     .destroy({
       where: {
-        id: req.params.id,
+        user_id: req.params.id,
       },
     })
     .then((status) => {

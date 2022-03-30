@@ -20,7 +20,7 @@ const addAdmin = (req, res, next) => {
       } else {
         adminModel
           .create({
-            admin_nickname: req.body.nickname,
+            admin_nickname: req.body.admin_nickname,
             email: req.body.email,
             password: req.body.password,
           })
