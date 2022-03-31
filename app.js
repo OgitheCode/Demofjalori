@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const session = require("express-session")
 
 const sequelize = require('./config/db');
 
@@ -13,6 +14,15 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
+app.use(
+  session({
+    secret: "12345",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+
 //ngarko modelet
 const UserModel = require('./models/users')
 const AdminModel = require('./models/admin')
@@ -25,10 +35,10 @@ const AdminRoute = require('./routes/admin_route')
 const SlangRoute = require('./routes/slang_route')
 const loginRoute = require('./routes/login_route')
 
-app.use('/user/', UserRoute);
-app.use('/admin/', AdminRoute)
-app.use('/slang/', SlangRoute)
-app.use("/auth/", loginRoute)
+app.use('/user', UserRoute);
+app.use('/admin', AdminRoute)
+app.use('/slang', SlangRoute)
+app.use("/auth", loginRoute)
 
 
 require('dotenv').config();

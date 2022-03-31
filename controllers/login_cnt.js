@@ -8,12 +8,15 @@ const login =  (req,res,next) => {
             email: req.body.email,
         },
     }).then((user) => {
+        // console.log(user)
         if(user) {
-            bcrypt.compare(req.body.password, user.password, (err,result) => {
+            bcrypt.compare(req.body.password, user.password, (error,result) => {
+                console.log('@@@@@@@', result)
                 if(result){
-                   // console.log('@@@@', req.session)
+               
                    req.session.isLoggedIn = true
                    req.session.userId = user.user_id
+                   req.session.role = user.role
 
                    res.send('Perdoruesi u kyq')
                 }
@@ -35,7 +38,7 @@ const login =  (req,res,next) => {
                         if(result){
                            // console.log('@@@@', req.session)
                            req.session.isLoggedIn = true
-                           req.session.adminId = admin.id
+                           req.session.Id = admin.id
         
                            res.send('Ok')
                         }
@@ -54,6 +57,12 @@ const login =  (req,res,next) => {
                 }
             })
         }
+    }).catch(err => {
+        res.status(200).json({
+            status: '0',
+            data: err.message
+
+        })
     })
 }
 
